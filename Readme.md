@@ -1,6 +1,12 @@
+- [Landing Page Project](#landing-page-project)
+- [Technologies](#technologies)
+- [Getting Started with Visual Studio Code](#getting-started-with-visual-studio-code)
+- [The most useful function that controls the active state of the section in the viewport](#the-most-useful-function-that-controls-the-active-state-of-the-section-in-the-viewport)
+- [Key Features](#key-features)
+
 # Landing Page Project
 
-This repo is a basic landing page with a minimial styles to practise some javascript DOM manipulation
+This repo is a basic landing page with minimial styles to practice some javascript DOM manipulation
 
 # Technologies
 
@@ -16,7 +22,7 @@ This repo is a basic landing page with a minimial styles to practise some javasc
  code . --new-window.
 ```
 
-# The most usefull function that controls the active state of the section in the viewport
+# The most useful function that controls the active state of the section in the viewport
 
 ```javascript
 window.addEventListener("scroll", (e) => {
@@ -55,7 +61,7 @@ let removeAllSectionsStates = function () {
 # Key Features
 
 1. Dynamic navigation bar based on the number of sections
-2. Highlighting the section that is being viwed while scrolling
+2. Highlighting the section that is being viewed while scrolling
 3. Smooth scrolling to content
 4. Responsive on all devices
 5. Hamburger menu
