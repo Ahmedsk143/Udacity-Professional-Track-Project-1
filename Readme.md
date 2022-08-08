@@ -1,16 +1,17 @@
 # Table of Contents
 
 - [Table of Contents](#table-of-contents)
-- [Landing Page Project](#landing-page-project)
+- [Project Description](#project-description)
 - [Technologies](#technologies)
 - [Getting Started with Visual Studio Code](#getting-started-with-visual-studio-code)
 - [Code snippet - The function of the scroll Event Listener](#code-snippet---the-function-of-the-scroll-event-listener)
 - [Key Features](#key-features)
 - [Dependencies](#dependencies)
 
-# Landing Page Project
+# Project Description
 
-This repo is a basic landing page with minimial styles to practice some javascript DOM manipulation
+It is is a basic landing page with minimial styles to practice some javascript DOM manipulation.
+It is a project for the Udacity Professional Track of web development
 
 # Technologies
 
