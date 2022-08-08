@@ -94,4 +94,4 @@ let removeAllSectionsStates = function () {
 
 # Dependencies
 
-- Font awesome library
+- Font Awesome Library
