@@ -1,3 +1,6 @@
+# Table of Contents
+
+- [Table of Contents](#table-of-contents)
 - [Landing Page Project](#landing-page-project)
 - [Technologies](#technologies)
 - [Getting Started with Visual Studio Code](#getting-started-with-visual-studio-code)
