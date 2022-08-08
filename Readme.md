@@ -11,8 +11,8 @@ This repo is a basic landing page with a minimial styles to practise some javasc
 # Getting Started with Visual Studio Code
 
 ```bash
- git clone https
- cd Simple Landing Page
+ git clone [https](https://github.com/Ahmedsk143/Udacity-Professional-Track-Project-1.git)
+ cd Udacity Professional Track Project 1
  code . --new-window.
 ```
 
