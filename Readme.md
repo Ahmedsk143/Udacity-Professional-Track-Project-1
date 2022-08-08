@@ -3,6 +3,7 @@
 - [Getting Started with Visual Studio Code](#getting-started-with-visual-studio-code)
 - [Code snippet - The function of the scroll Event Listener](#code-snippet---the-function-of-the-scroll-event-listener)
 - [Key Features](#key-features)
+- [Dependencies](#dependencies)
 
 # Landing Page Project
 
@@ -87,3 +88,7 @@ let removeAllSectionsStates = function () {
 5. Hamburger menu
 6. Hiding fixed navigation bar while not scrolling
 7. Added a scroll to top button on the page that’s only visible when the user scrolls below the fold of the page.
+
+# Dependencies
+
+- Font awesome library
