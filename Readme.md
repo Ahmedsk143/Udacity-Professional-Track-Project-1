@@ -1,7 +1,7 @@
 - [Landing Page Project](#landing-page-project)
 - [Technologies](#technologies)
 - [Getting Started with Visual Studio Code](#getting-started-with-visual-studio-code)
-- [The most useful function that controls the active state of the section in the viewport](#the-most-useful-function-that-controls-the-active-state-of-the-section-in-the-viewport)
+- [Code snippet - The function of the scroll Event Listener](#code-snippet---the-function-of-the-scroll-event-listener)
 - [Key Features](#key-features)
 
 # Landing Page Project
@@ -22,9 +22,10 @@ This repo is a basic landing page with minimial styles to practice some javascri
  code . --new-window.
 ```
 
-# The most useful function that controls the active state of the section in the viewport
+# Code snippet - The function of the scroll Event Listener
 
 ```javascript
+let isScrolling;
 window.addEventListener("scroll", (e) => {
   sections.forEach((section) => {
     const sectionLocation = section.getBoundingClientRect().top;
@@ -43,9 +44,28 @@ window.addEventListener("scroll", (e) => {
     removeAllLinksStates();
     removeAllSectionsStates();
   }
-  const section2 = document.querySelector("#section2");
-  console.log(section2.getBoundingClientRect().top);
+  // Clear The timeout and remove the class throughout the scroll
+  window.clearTimeout(isScrolling);
+  nav.classList.remove("scrolling");
+
+  // if the user stops scrolling for more than 1s && is scrolling from top to bottom
+  // then add the class scrolling
+  isScrolling = setTimeout(function () {
+    // this condition is to prevent the class to be added when the user is scrolling from bottom to top
+    if (this.oldScroll < this.scrollY) {
+      nav.classList.add("scrolling");
+    }
+    this.oldScroll = this.scrollY;
+  }, 1000);
+
+  // Showing the top button when the user scrolls down
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    topBtn.style.display = "flex";
+  } else {
+    topBtn.style.display = "none";
+  }
 });
+// Helper functions to remove all active states
 let removeAllLinksStates = function () {
   links.forEach((link) => {
     link.classList.remove("active");
@@ -65,3 +85,5 @@ let removeAllSectionsStates = function () {
 3. Smooth scrolling to content
 4. Responsive on all devices
 5. Hamburger menu
+6. Hiding fixed navigation bar while not scrolling
+7. Added a scroll to top button on the page that’s only visible when the user scrolls below the fold of the page.
