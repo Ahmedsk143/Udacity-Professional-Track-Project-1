@@ -1,7 +1,5 @@
 /* Normalization */
-html {
-  scroll-behavior: smooth;
-}
+
 body {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
@@ -75,6 +73,7 @@ h6 {
   border-radius: 15px;
   border-bottom: 2px solid transparent;
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 .header #menu a:hover,
 .header #menu a.active {

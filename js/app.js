@@ -9,55 +9,45 @@ const topBtn = document.querySelector("#top-btn");
 sections.forEach((section) => {
   const li = document.createElement("li");
   const a = document.createElement("a");
-  a.href = `#section${sectionsCount}`;
   a.innerHTML = section.dataset.nav;
+  a.dataset.sectionId = section.id;
   li.appendChild(a);
   ul.appendChild(li);
   sectionsCount++;
-});
-
-// Global variable after creating the nav dynamically
-const links = document.querySelectorAll("#menu li a");
-
-// Scrolling to the correct section when the link is clicked
-links.forEach((link) => {
-  link.addEventListener("click", () => {
-    const Id = link.getAttribute("href");
-    const section = document.querySelector(Id);
-    section.scrollIntoView({ behavior: "smooth" });
-    removeAllLinksStates();
-    link.classList.add("active");
+  // Scrolling into the section when the nav is clicked
+  a.addEventListener("click", (e) => {
+    e.preventDefault();
+    section.scrollIntoView({
+      behavior: "smooth",
+    });
   });
 });
 
-// Setting sections as active on scroll event
+/* On scroll event add active states to the section and the nav,
+ and only show the to top button scrolls down the page */
 let isScrolling;
 window.addEventListener("scroll", (e) => {
+  // Add the active states when a section is in the viewport
   sections.forEach((section) => {
     const sectionLocation = section.getBoundingClientRect().top;
     if (sectionLocation <= 100 && sectionLocation >= 0) {
-      // Remove all active links when scrolling
+      const link = document.querySelector(`[data-section-id="${section.id}"]`);
       removeAllLinksStates();
       removeAllSectionsStates();
-      // Add the active state to the corresponding section
-      const link = document.querySelector(`a[href='#${section.id}']`);
       link.classList.add("active");
       section.classList.add("active");
     }
   });
+  // Remove the active states when the hero section is in the viewport
   const headerLocation = header.getBoundingClientRect().top;
   if (headerLocation > -250) {
     removeAllLinksStates();
     removeAllSectionsStates();
   }
-  // Clear The timeout and remove the class throughout the scroll
+  // Hide the navbar after 1 second when the user stops scrolling
   window.clearTimeout(isScrolling);
   nav.classList.remove("scrolling");
-
-  // if the user stops scrolling for more than 1s && is scrolling from top to bottom
-  // then add the class scrolling
   isScrolling = setTimeout(function () {
-    // this condition is to prevent the class to be added when the user is scrolling from bottom to top
     if (this.oldScroll < this.scrollY) {
       nav.classList.add("scrolling");
     }
@@ -71,7 +61,9 @@ window.addEventListener("scroll", (e) => {
     topBtn.style.display = "none";
   }
 });
+
 // Helper functions to remove all active states
+const links = document.querySelectorAll("#menu li a");
 let removeAllLinksStates = function () {
   links.forEach((link) => {
     link.classList.remove("active");
